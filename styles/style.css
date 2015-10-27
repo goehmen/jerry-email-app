@@ -1,0 +1,37 @@
+html {
+  font-size: 10px; /* px means 'pixels': the base font size is now 10 pixels high  */
+  font-family: Roboto;
+  background-color: #00539F;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  color: teal;
+}
+
+p, li {
+  font-size: 50px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: teal;
+  text-align: center;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 70px 20px 20px 20px;
+  border: 5px solid red;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
