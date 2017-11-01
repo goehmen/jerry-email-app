@@ -1,0 +1,27 @@
+---
+resources:
+- name: resource-github-jerry-app
+  type: git
+  source:
+#    uri: https://github.com/cloudfoundry-community/simple-go-web-app.git
+    uri: https://github.com/goehmen/jerry-email-app.git
+
+- name: resource-deploy-jerry-app
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: true
+
+jobs:
+- name: job-deploy-app
+  serial: true
+  plan:
+  - {get: resource-github-jerry-app, trigger: true}
+  - put: resource-deploy-jerry-app
+    params:
+      manifest: resource-github-jerry-app/manifest.yml
+      path: resource-github-jerry-app
